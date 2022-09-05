@@ -19,6 +19,8 @@ Notandi getur leitað að ferð til ákveðin staðs á ákveðnum tíma og sér
 
 Notandi getur einnig sett "vakt" á ferð á ákveðnum tíma, þeas hann getur skráð hvert hann vill fara í á einhverjum ákveðnum degi klukkan eitthvað (hægt er að velja hvenær sem er á ákveðnum degi) og fær svo tilkynningar þegar bílstjórar skrá ferðir sem gætu hentað i þessa ferð og getur þá sent fyrirspurn á bílstjóra.
 
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Watch.png)
+
 ***
 
 ## Bílstjóri
