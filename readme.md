@@ -1,6 +1,6 @@
 # PUTTI
 
-Putti er samgönguapp sem nýtur sér lausu sætin í bílum einstaklinga sem vilja lækka bensíneyðsluna sína og eintstaklinga sem vilja fleiri samgönguvalmöguleika. 
+Putti er samgönguapp sem nýtur sér lausu sætin í bílum einstaklinga sem vilja lækka bensíneyðsluna sína og eintstaklinga sem vilja fleiri samgönguvalmöguleika. Appið sér um vandamál eins og greiðslumáta með því að hafa grunnverð á lítra og lætur farþega borga með aur.  
 
 ***
 
