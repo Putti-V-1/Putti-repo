@@ -28,7 +28,16 @@ Notandi getur einnig sett "vakt" á ferð á ákveðnum tíma, þeas hann getur 
 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Watch.png)
 
+#### Menu, Profile og Report
+Notandi getur séð prófílinn sinn, breytt upplýsingum og mynd, ásamt því getur Notandi séð prófíla hjá öðrum, reportað þá eða blokkað þá. 
+
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Menu.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Profile.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Report1.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Report2.png)
+
 ***
+
 
 ## Bílstjóri
 
@@ -37,5 +46,13 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/NewRide.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/DriverAccept.png)
 
+## Þínar ferðir
+
+
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/ActiveRides.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/ActiveRideInfo.png)
+
 ***
+
+
 
