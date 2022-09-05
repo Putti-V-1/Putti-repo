@@ -48,6 +48,7 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 
 ## Þínar ferðir
 
+Þegar Notandi ýtir á hægri mesta takkan þá fær hann upp allar ferðinar hans sem eru aktívar þ.e.a.s ferðir sem voru samþykktar eða þær sem notandinn samþykkti sem bílstjóri. Þegar ýtt er á aktíva ferð fær notandi upp allar þær upplýsingar sem hann þarf. Þar er líka takki sem gerir notandanum kleyft að hætta við ferð ef eitthvað kemur uppá.
 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/ActiveRides.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/ActiveRideInfo.png)
