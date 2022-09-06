@@ -29,7 +29,10 @@ Notandi getur einnig sett "vakt" á ferð á ákveðnum tíma, þeas hann getur 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Watch.png)
 
 #### Menu, Profile og Report
-Notandi getur séð prófílinn sinn, breytt upplýsingum og mynd, ásamt því getur Notandi séð prófíla hjá öðrum, reportað þá eða blokkað þá. 
+Notandi getur séð prófílinn sinn, breytt upplýsingum og mynd, ásamt því getur Notandi séð prófíla hjá öðrum, reportað þá eða blokkað þá.
+
+* Ef farþegi blokkar bílstjóra hættir hann að sjá ferðir hjá þeim bílstjóra.
+* Ef bílstjóri blokkar farþega getur farþegi ekki séð leiðir hjá bílstjóranum.
 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Menu.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Profile.png)
