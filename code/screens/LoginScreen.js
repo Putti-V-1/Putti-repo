@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import {auth} from "../firebase"
+//import {auth} from "../firebase"
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const signUp = () => {
-        auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {const user = userCredentials.user; console.log(user.email)}).cath(error => alert(error.message))
+        //auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {const user = userCredentials.user; console.log(user.email)}).cath(error => alert(error.message))
     }
 
     return (
