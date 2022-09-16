@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 export function HomeScreen() {
     const [location, setLocation] = useState(null);
@@ -26,6 +27,21 @@ export function HomeScreen() {
     }
   return (
     <View style={styles.container}>
+       <GooglePlacesAutocomplete
+          placeholder='Search'
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.log(data, details);
+          }}
+          query={{
+            key: 'AIzaSyDIQmUl7y56kZXYpvVI8hI1Q3wPPYkKEHE',
+            language: 'en',
+          }}
+          styles={{
+            container: {flex: 0, position: "absolute", width: "100%", zIndex: 1 },
+            listView: {backgroundColor: "white"}
+          }}
+        />
       <MapView 
         style={styles.map} 
         initialRegion={{ 
@@ -59,6 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 100,
   },
   map: {
     width: Dimensions.get('window').width,
