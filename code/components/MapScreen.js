@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
-export function HomeScreen() {
+export function MapScreen() {
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
 
