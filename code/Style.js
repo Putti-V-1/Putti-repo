@@ -20,6 +20,15 @@ const styles = StyleSheet.create({
         paddingTop: "2%",
         top: "195%",
         backgroundColor: "lightgray",
+    },
+    drawer: {
+        flex: 1,
+        marginBottom: "10%",
+    },
+    logout: {
+        position: "relative",
+        alignSelf: "flex-end",
+        marginBottom: "10",
     }
 });
 
