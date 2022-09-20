@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, Dimensions, Platform } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 export function MapScreen() {
     const [location, setLocation] = useState(null);
@@ -26,7 +27,25 @@ export function MapScreen() {
     }
   return (
     <View style={styles.container}>
+      <GooglePlacesAutocomplete
+          placeholder='Search'
+          fetchDetails={true}
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.log(details.geometry.location, data.description);
+          }}
+          query={{
+            key: 'AIzaSyAjidtWOJG0-IGEW0bWmllye3UJbPj0oVo',
+            language: 'en',
+          }}
+          styles={{
+            container: {flex: 0, position: "absolute", width: "100%", zIndex: 1, top: "0%" },
+            listView: {backgroundColor: "white"}
+          }}
+        />
       <MapView 
+        showsUserLocation={true}
+        showsMyLocationButton={true}
         style={styles.map} 
         initialRegion={{ 
           latitude: 64.1391803422148,
@@ -34,9 +53,8 @@ export function MapScreen() {
           latitudeDelta: 0.05,
           longitudeDelta: 0.05,
         }}
-        showsUserLocation={true}
-        showsMyLocationButton={true}
-        mapPadding={{top: 50, bottom: 50}}
+       
+        mapPadding={{top: 100, bottom: 50}}
       >
         <Marker
           coordinate={{
