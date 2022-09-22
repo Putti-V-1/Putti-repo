@@ -7,7 +7,6 @@ import {WatchScreen} from '../components/WatchScreen';
 import {BookedScreen} from '../components/BookedScreen';
 import CustomDrawer from'../components/Drawer';
 import {ProfileScreen} from '../components/ProfileScreen';
-import { useNavigation } from '@react-navigation/core';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Tab = createBottomTabNavigator();
@@ -15,7 +14,7 @@ const Drawer = createDrawerNavigator();
 
 function TabNav(){
   return(
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Map">
       <Tab.Screen options={{headerShown: false}} name="Watch" component={WatchScreen} />
       <Tab.Screen options={{headerShown: false}} name="Map" component={MapScreen} />
       <Tab.Screen options={{headerShown: false}} name="Booked" component={BookedScreen} />
