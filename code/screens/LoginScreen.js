@@ -13,7 +13,7 @@ const LoginScreen = () => {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
           if (user) {
-            navigation.replace("Home")
+            navigation.replace("Home", {stackNav: navigation})
           }
         })
     
@@ -38,7 +38,17 @@ const LoginScreen = () => {
             console.log('Logged in with:', user.email);
             })
             .catch(error => alert(error.message))
-        }
+    }
+
+    const devLog = () => {  // FYRIR DEVELOPMENT
+        auth
+            .signInWithEmailAndPassword("a@a.com", "password")
+            .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Logged in with:', user.email);
+            })
+            .catch(error => alert(error.message))
+    }
 
     return (
         <KeyboardAvoidingView
@@ -73,6 +83,12 @@ const LoginScreen = () => {
                     style={[styles.button, styles.buttonOutline]}
                 >
                     <Text style={styles.buttonOutlineText}>Register</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={devLog}  // FYRIR DEVELOPMENT
+                    style={styles.button}
+                    >
+                    <Text style={styles.buttonText}>Dev Login</Text>
                 </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>

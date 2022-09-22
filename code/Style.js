@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     logout: {
         position: "relative",
         alignSelf: "flex-end",
-        marginBottom: "10",
     }
 });
 
