@@ -48,7 +48,7 @@ export function MapScreen() {
             console.log(details.geometry.location, data.description);
           }}
           query={{
-            key: 'AIzaSyAjidtWOJG0-IGEW0bWmllye3UJbPj0oVo',
+            key: 'AIzaSyAR-R6U3YWpLsuqcAV85z-H-X6mBBdIFnQ',
             language: 'en',
           }}
           styles={{
@@ -74,7 +74,7 @@ export function MapScreen() {
           origin={coordinates[0]}
           destination={coordinates[1]}
           waypoints={[coordinates[2]]}
-          apikey={'AIzaSyAjidtWOJG0-IGEW0bWmllye3UJbPj0oVo'}
+          apikey={'AIzaSyAR-R6U3YWpLsuqcAV85z-H-X6mBBdIFnQ'}
           strokeWidth={5}
           strokeColor="blue"
         />
