@@ -28,7 +28,22 @@ const styles = StyleSheet.create({
     logout: {
         position: "relative",
         alignSelf: "flex-end",
-    }
+    },
+    tripBtn: {
+        backgroundColor: "white",
+        width: "50%",
+        padding: 15,
+        borderRadius: 10,
+        borderColor: "black",
+        borderWidth: "1px",
+        alignItems: "center",
+        marginBottom: "10%",
+    },
+    tripBtnText: {
+        color: "#0782F9",
+        fontWeight: "700",
+        fontSize: 16,
+    },
 });
 
 export { styles }
