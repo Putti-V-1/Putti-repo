@@ -90,12 +90,17 @@ export function MapScreen() {
         style={styles.map} 
         initialRegion={initialRegion}
       >
-        <Marker coordinate={coordinates[1]} />
-        <Marker coordinate={coordinates[2]} />
-        <MapViewDirections 
-          origin={coordinates[0]}
-          destination={coordinates[1]}
-          waypoints={[coordinates[2]]}
+        <Marker coordinate={coordinates[2]}> 
+          <Callout onPress={() => {
+            alert('Ferð valin')
+          }}
+          >
+            <Text>Velja Ferð{toString(coordinates[2].latitude)}</Text>
+          </Callout>
+        </Marker> 
+        <MapViewDirections
+          origin={coordinates[1]}
+          destination={coordinates[2]}
           apikey={'AIzaSyAR-R6U3YWpLsuqcAV85z-H-X6mBBdIFnQ'}
           strokeWidth={5}
           strokeColor="blue"
