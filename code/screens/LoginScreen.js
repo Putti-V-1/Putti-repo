@@ -3,9 +3,11 @@ import React, {useEffect, useState} from "react";
 import { KeyboardAvoidingView, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import {auth} from "../firebase"
+import { ref, set } from 'firebase/database';
+
 
 const LoginScreen = () => {
-    const [email, setEmail] = useState('')
+    const [loginEmail, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const navigation = useNavigation()
@@ -13,6 +15,7 @@ const LoginScreen = () => {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
           if (user) {
+            global.user = user;
             navigation.replace("Home", {stackNav: navigation})
           }
         })
@@ -22,9 +25,12 @@ const LoginScreen = () => {
 
     const signUp = () => {
         auth
-            .createUserWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(loginEmail, password)
             .then(userCredentials => {
             const user = userCredentials.user;
+            set(ref(global.db, 'users/' + user.uid), {
+                email: loginEmail,
+            });
             console.log('Registered with:', user.email);
             })
             .catch(error => alert(error.message))
@@ -32,7 +38,7 @@ const LoginScreen = () => {
 
     const login = () => {
         auth
-            .signInWithEmailAndPassword(email, password)
+            .signInWithEmailAndPassword(loginEmail, password)
             .then(userCredentials => {
             const user = userCredentials.user;
             console.log('Logged in with:', user.email);
@@ -58,7 +64,7 @@ const LoginScreen = () => {
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Email"
-                    value={email}
+                    value={loginEmail}
                     onChangeText={text => setEmail(text)}
                     style={styles.input}
                 />
