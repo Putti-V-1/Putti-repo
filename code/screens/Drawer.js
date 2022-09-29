@@ -1,12 +1,9 @@
 import React from "react";
-import { Button, View, Text, TouchableOpacity } from "react-native";
-import { auth } from '../firebase'
+import { Button, View} from "react-native";
 import {styles} from "../Style"
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer';
-import { useNavigation } from '@react-navigation/core'
 
 const CustomDrawer = props => {
-    const navigation = useNavigation()
     return(
         <View style={styles.drawer}>
             <DrawerContentScrollView {...props} contentContainerStyle={{backgroundColor: '#fff'}}>

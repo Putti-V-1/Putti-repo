@@ -2,11 +2,11 @@ import React from "react";
 import { Button, View, Text } from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import {MapScreen} from '../components/MapScreen';
-import {WatchScreen} from '../components/WatchScreen';
-import {BookedScreen} from '../components/BookedScreen';
-import CustomDrawer from'../components/Drawer';
-import {ProfileScreen} from '../components/ProfileScreen';
+import {MapScreen} from '../screens/MapScreen';
+import {WatchScreen} from '../screens/WatchScreen';
+import {BookedScreen} from '../screens/BookedScreen';
+import CustomDrawer from'../screens/Drawer';
+import {ProfileScreen} from '../screens/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { ref, get, child } from 'firebase/database';
 
