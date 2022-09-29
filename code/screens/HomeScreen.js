@@ -8,9 +8,11 @@ import {BookedScreen} from '../components/BookedScreen';
 import CustomDrawer from'../components/Drawer';
 import {ProfileScreen} from '../components/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { ref, get, child } from 'firebase/database';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+
 
 function TabNav(){
   return(
@@ -22,14 +24,20 @@ function TabNav(){
   );
 }
 
-const HomeScreen = ({route}) => {
-  const tabNav = route.params.stackNav;
+const HomeScreen = () => {
+  get(child(ref(global.db), `users/${global.user["uid"]}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      global.user = snapshot.val();
+    }else{
+      stackNav.replace("login")
+    }
+  })
   return (
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({
         headerRight: () => (
           <Button
-            onPress={()=>{tabNav.navigate('Notifications')}}
+            onPress={()=>{global.stackNav.navigate('Notifications')}}
             title="Notif"
             color="#fff"
           />

@@ -16,7 +16,8 @@ const LoginScreen = () => {
         const unsubscribe = auth.onAuthStateChanged(user => {
           if (user) {
             global.user = user;
-            navigation.replace("Home", {stackNav: navigation})
+            global.stackNav = navigation;
+            navigation.replace("Home");
           }
         })
     
@@ -30,8 +31,8 @@ const LoginScreen = () => {
             const user = userCredentials.user;
             set(ref(global.db, 'users/' + user.uid), {
                 email: loginEmail,
+                driver: false,
             });
-            console.log('Registered with:', user.email);
             })
             .catch(error => alert(error.message))
     }
@@ -41,7 +42,6 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword(loginEmail, password)
             .then(userCredentials => {
             const user = userCredentials.user;
-            console.log('Logged in with:', user.email);
             })
             .catch(error => alert(error.message))
     }
@@ -51,7 +51,6 @@ const LoginScreen = () => {
             .signInWithEmailAndPassword("a@a.com", "password")
             .then(userCredentials => {
             const user = userCredentials.user;
-            console.log('Logged in with:', user.email);
             })
             .catch(error => alert(error.message))
     }
