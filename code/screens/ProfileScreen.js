@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import { ref, get, child } from 'firebase/database';
 
 
 export function ProfileScreen() {
