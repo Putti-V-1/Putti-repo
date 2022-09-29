@@ -33,7 +33,9 @@ export function MapScreen() {
     const [location, setLocation] = useState(null);
     const [errorMsg, setErrorMsg] = useState(null);
     const [region, setRegion] = useState(null);
+    const [color, setColor] = useState('grey');
     const mapRef = useRef(null);
+    const dirRef = useRef(null);
     
     useEffect(() => { // LocationRequest Hook
       (async () => {
@@ -89,6 +91,9 @@ export function MapScreen() {
         mapPadding={{top: 100, bottom: 50}}
         style={styles.map} 
         initialRegion={initialRegion}
+        onPress={() => {
+          setColor('grey')
+        }}
       >
         <Marker coordinate={coordinates[2]}> 
           <Callout onPress={() => {
@@ -99,11 +104,16 @@ export function MapScreen() {
           </Callout>
         </Marker> 
         <MapViewDirections
+          ref={dirRef}
           origin={coordinates[1]}
           destination={coordinates[2]}
           apikey={'AIzaSyAR-R6U3YWpLsuqcAV85z-H-X6mBBdIFnQ'}
           strokeWidth={5}
-          strokeColor="blue"
+          strokeColor={color}
+          tappable={true}
+          onPress={() => {
+            setColor('blue')
+          }}
         />
       </MapView>
   </View>
