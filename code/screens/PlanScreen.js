@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View, TouchableOpacity, KeyboardAvoidingView, Button, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
@@ -52,7 +52,7 @@ const PlanScreen = () => {
                 }}
             />
             <GooglePlacesAutocomplete // Search bar með autocomplete
-                placeholder='To'
+                placeholder='to'
                 fetchDetails={true}
                 returnKeyType={"search"}
                 enablePoweredByContainer={false}
@@ -75,11 +75,11 @@ const PlanScreen = () => {
                 }}
             />
             <TouchableOpacity onPress={showDatePicker}>
-                <Text>{selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear()}</Text>
+                <Text>{selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedDate.getHours() + ":" + selectedDate.getMinutes()}</Text>
             </TouchableOpacity>
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
-                mode="date"
+                mode="datetime"
                 onConfirm={handleConfirm}
                 onCancel={hideDatePicker}
                 isDarkModeEnabled={true}
