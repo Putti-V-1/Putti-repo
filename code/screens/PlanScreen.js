@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Text, TouchableOpacity, KeyboardAvoidingView, StyleSheet } from 'react-native';
+import { Text, Veiw, TouchableOpacity, KeyboardAvoidingView, StyleSheet, View } from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+import { ref, set } from 'firebase/database';
 
 
 const PlanScreen = () => {
@@ -21,6 +22,25 @@ const PlanScreen = () => {
     const handleConfirm = (date) => {
         setDate(date);
         hideDatePicker();
+    };
+
+    function confirmRide(){
+        if(to!=null && from!=null){
+            let rideId = global.user["id"] + selectedDate.getMonth() + selectedDate.getDate() + selectedDate.getFullYear();
+            set(ref(global.db, 'rides/' + rideId), {
+                driver: global.user["id"],
+                time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear(),
+                to: to,
+                from: from,
+            });
+            set(ref(global.db, 'users/' + global.user["id"] + "/rides"), {
+                rideId,
+            });
+            global.stackNav.goBack();
+            alert("ferð skrað")
+        }else{
+            alert("PICK PLACE BITCH")
+        }
     };
 
     return (
@@ -57,7 +77,7 @@ const PlanScreen = () => {
                 returnKeyType={"search"}
                 enablePoweredByContainer={false}
                 nearbyPlacesAPI={'GooglePlacesSearch'}
-                styles={styles.search}
+                styles={styles.search2}
                 onPress={(data, details = null) => {
                     // 'details' is provided when fetchDetails = true
                     //console.log(details.geometry.location.lat, data.description);
@@ -75,11 +95,11 @@ const PlanScreen = () => {
                 }}
             />
             <TouchableOpacity onPress={showDatePicker}>
-                <Text>{selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedDate.getHours() + ":" + selectedDate.getMinutes()}</Text>
+                <Text>{selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear()}</Text>
             </TouchableOpacity>
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
-                mode="datetime"
+                mode="date"
                 onConfirm={handleConfirm}
                 onCancel={hideDatePicker}
                 isDarkModeEnabled={true}
@@ -87,6 +107,12 @@ const PlanScreen = () => {
                 minimumDate={new Date()}
                 date={selectedDate}
             />
+            <TouchableOpacity 
+                style={styles.confirm}
+                onPress={confirmRide}
+            >
+                <Text>Skra ferð</Text>
+            </TouchableOpacity>
         </KeyboardAvoidingView>
     );
 }
@@ -98,6 +124,10 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "center",
       alignItems: "center",
+    },
+    confirm: {
+        position: "absolute",
+        bottom: "10%",
     },
     inputContainer: {
         width: "80%"
@@ -139,7 +169,11 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     search: {
-        container: {flex: 0, position: "absolute", width: "100%", zIndex: 1, top: "0%" },
+        container: {flex: 0, position: "absolute", width: "100%", zIndex: 1, top: "2%" },
+        listView: {backgroundColor: "white"}
+    },
+    search2: {
+        container: {flex: 0, position: "absolute", width: "100%", zIndex: 1, top: "8%" },
         listView: {backgroundColor: "white"}
     },
 })
