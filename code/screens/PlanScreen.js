@@ -9,7 +9,9 @@ const PlanScreen = () => {
     const [from, setFrom] = useState(null);
     const [to, setTo] = useState(null);
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+    const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
     const [selectedDate, setDate] = useState(new Date());
+    const [selectedTime, setTime] = useState(new Date());
 
     const showDatePicker = () => {
         setDatePickerVisibility(true);
@@ -19,17 +21,30 @@ const PlanScreen = () => {
         setDatePickerVisibility(false);
     };
 
-    const handleConfirm = (date) => {
+    const showTimePicker = () => {
+        setTimePickerVisibility(true);
+    };
+
+    const hideTimePicker = () => {
+        setTimePickerVisibility(false);
+    };
+
+    const handleDateConfirm = (date) => {
         setDate(date);
         hideDatePicker();
     };
-
+    
+    const handleTimeConfirm = (time) => {
+        setTime(time);
+        hideTimePicker();
+    };
+    
     function confirmRide(){
         if(to!=null && from!=null){
             let rideId = global.user["id"] + selectedDate.getMonth() + selectedDate.getDate() + selectedDate.getFullYear();
             set(ref(global.db, 'rides/' + rideId), {
                 driver: global.user["id"],
-                time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear(),
+                time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedTime.getHours() + ":" + selectedTime.getMinutes(),
                 to: to,
                 from: from,
             });
@@ -44,9 +59,8 @@ const PlanScreen = () => {
     };
 
     return (
-        <KeyboardAvoidingView
+        <View
             style={styles.container}
-            behavior="padding"
         >
             <GooglePlacesAutocomplete // Search bar með autocomplete
                 placeholder='From'
@@ -100,12 +114,24 @@ const PlanScreen = () => {
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 mode="date"
-                onConfirm={handleConfirm}
+                onConfirm={handleDateConfirm}
                 onCancel={hideDatePicker}
                 isDarkModeEnabled={true}
                 //display="inline"
                 minimumDate={new Date()}
                 date={selectedDate}
+            />
+            <TouchableOpacity onPress={showTimePicker}>
+                <Text>{selectedTime.getHours() + ":" + selectedTime.getMinutes()}</Text>
+            </TouchableOpacity>
+            <DateTimePickerModal
+                isVisible={isTimePickerVisible}
+                mode="time"
+                onConfirm={handleTimeConfirm}
+                onCancel={hideTimePicker}
+                isDarkModeEnabled={true}
+                minimumDate={new Date()}
+                date={selectedTime}
             />
             <TouchableOpacity 
                 style={styles.confirm}
@@ -113,7 +139,7 @@ const PlanScreen = () => {
             >
                 <Text>Skra ferð</Text>
             </TouchableOpacity>
-        </KeyboardAvoidingView>
+        </View>
     );
 }
 
