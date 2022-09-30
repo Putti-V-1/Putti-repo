@@ -14,7 +14,7 @@ export function WatchScreen() {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity
             onPress={planTrip}
-            style={styles.tripBtn}
+            //style={styles.tripBtn}
             >
             <Text style={styles.tripBtnText}>Skra ferð</Text>
         </TouchableOpacity>

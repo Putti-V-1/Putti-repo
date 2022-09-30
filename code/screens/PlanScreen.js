@@ -103,7 +103,7 @@ const PlanScreen = () => {
                 onConfirm={handleConfirm}
                 onCancel={hideDatePicker}
                 isDarkModeEnabled={true}
-                display="inline"
+                //display="inline"
                 minimumDate={new Date()}
                 date={selectedDate}
             />
