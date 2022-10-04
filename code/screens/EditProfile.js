@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import {
   Button,
   Text,
@@ -15,7 +15,6 @@ export default class EditProfileScreen extends React.Component {
       headerTitle: 'headerTitle Edit Profile',
       headerRight: (
         <Button
-          // onPress={() => alert('Profile Saved!')}
           onPress={navigation.getParam('saveProfile')}
           title="Save Profile"
           color="orange"

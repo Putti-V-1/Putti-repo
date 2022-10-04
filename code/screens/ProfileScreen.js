@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from "react";
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
 
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
+               
 const ProfileStack = createStackNavigator({
   Profile: ProfileScreen,
   Edit: EditProfileScreen,
