@@ -17,8 +17,8 @@ class ProfileScreen extends React.Component {
     color1: 'pink',
     color2: 'yellow',
     color3: 'green',
-    name: 'App.js state name text Buddy',
-    bio: 'App.js state bio text Buddy.',
+    name: 'App.js state name text blabla',
+    bio: 'App.js state bio text blabla.',
   };
 
   handlePress = () => {
@@ -46,7 +46,7 @@ class ProfileScreen extends React.Component {
           paddingTop: 30,
           justifyContent: 'center',
         }}>
-        <Image style={styles.picture} source={require('assets/zoe.jpg')} />
+        <Image style={styles.picture} source={require('')} />
 
         <Text style={styles.name}>{this.state.name}</Text>
 
@@ -65,7 +65,7 @@ class ProfileScreen extends React.Component {
               margin: 20,
             }}>
             <Text style={styles.buttonText}>
-              TouchableOpacity View Text Edit Profile Dude
+              TouchableOpacity View Text Edit Profile
             </Text>
           </View>
         </TouchableOpacity>
