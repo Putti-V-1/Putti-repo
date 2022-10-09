@@ -30,17 +30,57 @@ export function ProfileScreen() {
 
       <View style={styles.userInfoSection}>
         <View style={styles.row}>
-        <Icon name="map-marker" size={17} color="#900" />
+        <Icon name="map-marker" size={19} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>Reykjavik, iceland</Text>
         </View>
         <View style={styles.row}>
-        <Icon name="phone" size={15} color="#900" />
+        <Icon name="phone" size={14} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>5812345</Text>
         </View>
         <View style={styles.row}>
-        <Icon name="desktop" size={12} color="#900" />
+        <Icon name="desktop" size={11} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>email@email.email</Text>
         </View>
+      </View>
+
+      <View style={styles.infoBoxWrapper}>
+        <View style={[styles.infoBox, {
+          borderRightColor: '#23272A',
+          borderRightWidth: 1
+        }]}>
+            <Title>32</Title>
+            <Caption>likes</Caption>
+        </View>
+        <View style={styles.infoBox}>
+            <Title>52</Title>
+            <Caption>ferdir</Caption>
+        </View>
+      </View>
+      <View style={styles.menuWrapper}>
+        <TouchableRipple onPress={()=>{global.stackNav.navigate('EditProfile')}}>
+          <View style={StyleSheet.menuItem}>
+            <Icon name="edit" size={25} color="#900" />
+            <Text style={styles.menuItemText}>breytta profil</Text>
+          </View>
+        </TouchableRipple>
+        <TouchableRipple onPress={() => {}}>
+          <View style={StyleSheet.menuItem}>
+            <Icon name="heart-o" size={25} color="#900" />
+            <Text style={styles.menuItemText}>þinir uppahalds</Text>
+          </View>
+        </TouchableRipple>
+        <TouchableRipple onPress={() => {}}>
+          <View style={StyleSheet.menuItem}>
+            <Icon name="money" size={25} color="#900" />
+            <Text style={styles.menuItemText}>Greiðslu aðferð</Text>
+          </View>
+        </TouchableRipple>
+        <TouchableRipple onPress={() => {}}>
+          <View style={StyleSheet.menuItem}>
+            <Icon name="question" size={25} color="#900" />
+            <Text style={styles.menuItemText}>Hjálp</Text>
+          </View>
+        </TouchableRipple>
       </View>
     </SafeAreaView>
   );
@@ -51,6 +91,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#99AAb5'
   },
   userInfoSection: {
     paddingHorizontal: 30,
@@ -70,9 +111,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   infoBoxWrapper: {
-    borderBottomColor: '#dddddd',
+    borderBottomColor: '#23272A',
     borderBottomWidth: 1,
-    borderTopColor: '#dddddd',
+    borderTopColor: '#23272A',
     borderTopWidth: 1,
     flexDirection: 'row',
     height: 100,
@@ -98,3 +139,4 @@ const styles = StyleSheet.create({
     lineHeight: 26
   },
 })
+
