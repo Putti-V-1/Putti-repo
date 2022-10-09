@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen'
 import HomeScreen from './screens/HomeScreen'
 import NotificationScreen from './screens/NotificationScreen'
 import PlanScreen from './screens/PlanScreen'
+import ProfileScreen from './screens/ProfileScreen'
 
 const Stack = createNativeStackNavigator();
 

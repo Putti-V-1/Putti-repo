@@ -1,124 +1,100 @@
-import React from "react";
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Constants } from 'expo';
+import * as React from "react";
+import {Image, View, StyleSheet, SafeAreaView } from 'react-native';
+import {
+  Title,
+  Caption,
+  Text,
+  TouchableRipple,
+} from 'react-native-paper';
+import logo from './assets/logo.jpg';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { createAppContainer, createStackNavigator } from 'react-navigation';
-
-import EditProfileScreen from './EditProfile';
-
-class ProfileScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: 'headerTitle Profile',
-    };
-  };
-
-  state = {
-    color1: 'pink',
-    color2: 'yellow',
-    color3: 'green',
-    name: 'App.js state name text blabla',
-    bio: 'App.js state bio text blabla.',
-  };
-
-  handlePress = () => {
-    this.setState({ color3: 'purple' });
-    this.props.navigation.navigate('Edit', {
-      name: this.state.name,
-      bio: this.state.bio,
-      saveEditedProfile: this.saveEditedProfile,
-    });
-  };
-
-  saveEditedProfile = (name, bio) => {
-    this.setState({
-      name: name,
-      bio: bio,
-    });
-  };
-
-  render() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          paddingTop: 30,
-          justifyContent: 'center',
-        }}>
-        <Image style={styles.picture} source={require('')} />
-
-        <Text style={styles.name}>{this.state.name}</Text>
-
-        <Text style={styles.bio}>{this.state.bio}</Text>
-
-        <TouchableOpacity onPress={this.handlePress}>
-          <View
-            style={{
-              backgroundColor: this.state.color1,
-              color: this.state.color3,
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: 20,
-              borderWidth: 15,
-              borderColor: this.state.color2,
-              margin: 20,
-            }}>
-            <Text style={styles.buttonText}>
-              TouchableOpacity View Text Edit Profile
-            </Text>
+export function ProfileScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.userInfoSection}>
+        <View style={{flexDirection: 'row', marginTop: 15}}>
+        <Image 
+          source={logo}  
+          style={{width: 100, height: 100, borderRadius: 400/ 2}} 
+        />
+          <View style={{marginLeft: 20}}>
+            <Title style={[styles.title, {
+              marginTop: 15,
+              marginBottom: 5,
+            }]}>ok i pull up</Title>
+            <Caption style={styles.caption}>@okipullup</Caption>
           </View>
-        </TouchableOpacity>
+        </View>
       </View>
-    );
-  }
-}
+
+      <View style={styles.userInfoSection}>
+        <View style={styles.row}>
+        <Icon name="map-marker" size={17} color="#900" />
+          <Text style={{color:"#777777", marginLeft: 20}}>Reykjavik, iceland</Text>
+        </View>
+        <View style={styles.row}>
+        <Icon name="phone" size={15} color="#900" />
+          <Text style={{color:"#777777", marginLeft: 20}}>5812345</Text>
+        </View>
+        <View style={styles.row}>
+        <Icon name="desktop" size={12} color="#900" />
+          <Text style={{color:"#777777", marginLeft: 20}}>email@email.email</Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
-  picture: {
-    height: 128,
-    width: 128,
-    borderRadius: 30,
-    borderWidth: 1,
+  container: {
+    flex: 1,
   },
-  name: {
-    margin: 24,
+  userInfoSection: {
+    paddingHorizontal: 30,
+    marginBottom: 25,
+  },
+  title: {
     fontSize: 24,
     fontWeight: 'bold',
-    textAlign: 'center',
+  },
+  caption: {
+    fontSize: 14,
+    lineHeight: 14,
+    fontWeigt: '500',
+  },
+  row: {
+    flexDirection: 'row',
+    marginBottom: 10,
+  },
+  infoBoxWrapper: {
+    borderBottomColor: '#dddddd',
+    borderBottomWidth: 1,
+    borderTopColor: '#dddddd',
+    borderTopWidth: 1,
+    flexDirection: 'row',
+    height: 100,
+  },
+  infoBox: {
+    width: '50%',
     alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 20,
-    borderWidth: 15,
-    borderColor: 'red',
-    backgroundColor: 'orange',
-    color: 'green',
+    justifyContent: 'center'
   },
-  bio: {
-    marginLeft: 10,
-    marginRight: 10,
-    fontSize: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 20,
-    borderWidth: 15,
-    borderColor: 'red',
-    backgroundColor: 'orange',
-    margin: 20,
+  menuWrapper: {
+    marginTop: 10,
   },
-  buttonText: {
-    fontSize: 30,
-    paddingLeft: 5,
-    paddingRight: 5,
-    padding: 30,
-    textAlign: 'center',
+  menuItem: {
+    flexDirection: 'row',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
   },
-});
-               
-const ProfileStack = createStackNavigator({
-  Profile: ProfileScreen,
-  Edit: EditProfileScreen,
-});
-
-const App = createAppContainer(ProfileStack);
-export default App;
+  menuItemText: {
+    color: '#777777',
+    marginLeft: 20,
+    fontWeight: '600',
+    dontSize: 16,
+    lineHeight: 26
+  },
+})
