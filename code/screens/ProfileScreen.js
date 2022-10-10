@@ -22,7 +22,7 @@ export function ProfileScreen() {
             <Title style={[styles.title, {
               marginTop: 15,
               marginBottom: 5,
-            }]}>ok i pull up</Title>
+            }]}>oki pullup</Title>
             <Caption style={styles.caption}>@okipullup</Caption>
           </View>
         </View>
@@ -34,11 +34,19 @@ export function ProfileScreen() {
           <Text style={{color:"#777777", marginLeft: 20}}>Reykjavik, iceland</Text>
         </View>
         <View style={styles.row}>
+        <Icon name="globe" size={16} color="#23272A" />
+          <Text style={{color:"#777777", marginLeft: 17}}>islenska, enska, danska, spaenska</Text>
+        </View>
+        <View style={styles.row}>
+        <Icon name="age" size={19} color="#23272A" />
+          <Text style={{color:"#777777", marginLeft: 20}}>20 ara</Text>
+        </View>
+        <View style={styles.row}>
         <Icon name="phone" size={14} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>5812345</Text>
         </View>
         <View style={styles.row}>
-        <Icon name="desktop" size={11} color="#23272A" />
+        <Icon name="envelope" size={11} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>email@email.email</Text>
         </View>
       </View>
@@ -63,19 +71,19 @@ export function ProfileScreen() {
             <Text style={styles.menuItemText}>breytta profil</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={()=>{global.stackNav.navigate('FavoriteScreen')}}>
           <View style={StyleSheet.menuItem}>
             <Icon name="heart-o" size={25} color="#900" />
             <Text style={styles.menuItemText}>þinir uppahalds</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={()=>{global.stackNav.navigate('PaymentScreen')}}>
           <View style={StyleSheet.menuItem}>
             <Icon name="money" size={25} color="#900" />
             <Text style={styles.menuItemText}>Greiðslu aðferð</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress={()=>{global.stackNav.navigate('helpScreen')}}>
           <View style={StyleSheet.menuItem}>
             <Icon name="question" size={25} color="#900" />
             <Text style={styles.menuItemText}>Hjálp</Text>
