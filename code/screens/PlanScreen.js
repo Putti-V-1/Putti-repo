@@ -6,10 +6,13 @@ import { ref, set } from 'firebase/database';
 
 
 const PlanScreen = () => {
-    const [from, setFrom] = useState(null);
-    const [to, setTo] = useState(null);
+
+    const [origin, setOrigin] = useState(null);
+    const [destination, setDestination] = useState(null);
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+    const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
     const [selectedDate, setDate] = useState(new Date());
+    const [selectedTime, setTime] = useState(new Date());
 
     const showDatePicker = () => {
         setDatePickerVisibility(true);
@@ -19,22 +22,35 @@ const PlanScreen = () => {
         setDatePickerVisibility(false);
     };
 
-    const handleConfirm = (date) => {
+    const showTimePicker = () => {
+        setTimePickerVisibility(true);
+    };
+
+    const hideTimePicker = () => {
+        setTimePickerVisibility(false);
+    };
+
+    const handleDateConfirm = (date) => {
         setDate(date);
         hideDatePicker();
     };
-
+    
+    const handleTimeConfirm = (time) => {
+        setTime(time);
+        hideTimePicker();
+    };
+    
     function confirmRide(){
-        if(to!=null && from!=null){
-            let rideId = global.user["id"] + selectedDate.getMonth() + selectedDate.getDate() + selectedDate.getFullYear();
+        if(destination!=null && origin!=null){
+            let rideId = global.user["id"] + selectedDate.getDate() + selectedDate.getMonth() + selectedDate.getFullYear() + selectedTime.getHours() + selectedTime.getMinutes();
             set(ref(global.db, 'rides/' + rideId), {
                 driver: global.user["id"],
-                time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear(),
-                to: to,
-                from: from,
+                time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedTime.getHours() + ":" + selectedTime.getMinutes(),
+                destination: destination,
+                origin: origin,
             });
-            set(ref(global.db, 'users/' + global.user["id"] + "/rides"), {
-                rideId,
+            set(ref(global.db, 'users/' + global.user["id"] + "/rides/" + rideId), {
+                key: rideId,
             });
             global.stackNav.goBack();
             alert("ferð skrað")
@@ -44,9 +60,8 @@ const PlanScreen = () => {
     };
 
     return (
-        <KeyboardAvoidingView
+        <View
             style={styles.container}
-            behavior="padding"
         >
             <GooglePlacesAutocomplete // Search bar með autocomplete
                 placeholder='From'
@@ -58,11 +73,9 @@ const PlanScreen = () => {
                 onPress={(data, details = null) => {
                     // 'details' is provided when fetchDetails = true
                     //console.log(details.geometry.location.lat, data.description);
-                    setFrom({
+                    setOrigin({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
-                        latitudeDelta: 0.05,
-                        longitudeDelta: 0.05,
                     })
                 }}
                 query={{
@@ -72,7 +85,7 @@ const PlanScreen = () => {
                 }}
             />
             <GooglePlacesAutocomplete // Search bar með autocomplete
-                placeholder='to'
+                placeholder='To'
                 fetchDetails={true}
                 returnKeyType={"search"}
                 enablePoweredByContainer={false}
@@ -81,11 +94,9 @@ const PlanScreen = () => {
                 onPress={(data, details = null) => {
                     // 'details' is provided when fetchDetails = true
                     //console.log(details.geometry.location.lat, data.description);
-                    setTo({
+                    setDestination({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
-                        latitudeDelta: 0.05,
-                        longitudeDelta: 0.05,
                     })
                 }}
                 query={{
@@ -100,12 +111,24 @@ const PlanScreen = () => {
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 mode="date"
-                onConfirm={handleConfirm}
+                onConfirm={handleDateConfirm}
                 onCancel={hideDatePicker}
                 isDarkModeEnabled={true}
                 //display="inline"
                 minimumDate={new Date()}
                 date={selectedDate}
+            />
+            <TouchableOpacity onPress={showTimePicker}>
+                <Text>{selectedTime.getHours() + ":" + selectedTime.getMinutes()}</Text>
+            </TouchableOpacity>
+            <DateTimePickerModal
+                isVisible={isTimePickerVisible}
+                mode="time"
+                onConfirm={handleTimeConfirm}
+                onCancel={hideTimePicker}
+                isDarkModeEnabled={true}
+                minimumDate={new Date()}
+                date={selectedTime}
             />
             <TouchableOpacity 
                 style={styles.confirm}
@@ -113,7 +136,7 @@ const PlanScreen = () => {
             >
                 <Text>Skra ferð</Text>
             </TouchableOpacity>
-        </KeyboardAvoidingView>
+        </View>
     );
 }
 
