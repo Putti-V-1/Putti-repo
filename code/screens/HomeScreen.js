@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View, Text } from "react-native";
+import { Button, View, Text, StyleSheet} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import {MapScreen} from '../screens/MapScreen';
@@ -9,10 +9,9 @@ import CustomDrawer from'../screens/Drawer';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {SetGlobals} from './SetGlobals';
-
+import icons from './assets/logo.jpg';
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-
 
 function TabNav(){
   return(
@@ -53,3 +52,14 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF'
+  },
+  menuItem: {
+    flexDirection: 'row',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+  },
+})

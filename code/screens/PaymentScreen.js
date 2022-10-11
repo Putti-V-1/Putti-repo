@@ -15,10 +15,10 @@ const PaymentScreen = () => {
       }}>vinsamlegast settu inn kortanumer.</Text>
         </View>
         <View style={styles.action}>
-          <Icon name="card" size={20}  color='#FFFFFF'/>
+          <Icon name="credit-card" size={20}  color='#05375a'/>
           <TextInput
             placeholder="Korta Numer"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             keyboardType='number-pad'
             autoCorrect={false}
             style={{
@@ -29,10 +29,10 @@ const PaymentScreen = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="card" size={20}  color='#FFFFFF'/>
+          <Icon name="credit-card" size={20}  color='#05375a'/>
           <TextInput
             placeholder="rennur ut"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             keyboardType='number-pad'
             autoCorrect={false}
             style={{
@@ -43,10 +43,10 @@ const PaymentScreen = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="card" size={20}  color='#FFFFFF'/>
+          <Icon name="credit-card" size={20}  color='#05375a'/>
           <TextInput
             placeholder="cvs"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             keyboardType='number-pad'
             autoCorrect={false}
             style={{
@@ -68,7 +68,7 @@ export default PaymentScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#99AAb5',
+      backgroundColor: '#FFFFFF',
       },
     action: {
     flexDirection: 'row',
