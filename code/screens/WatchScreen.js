@@ -1,30 +1,28 @@
 import * as React from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import {styles} from "../Style"
 
-
-function planTrip(){
-  global.stackNav.navigate("Plan")
+function renderRide(ride){
+  return (
+    <TouchableOpacity>
+      <Text>
+        {ride.key}
+      </Text>
+    </TouchableOpacity>)
 }
-
 
 export function WatchScreen() {
-  if(global.user["driver"]){
-    return(
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity
-            onPress={planTrip}
-            //style={styles.tripBtn}
-            >
-            <Text style={styles.tripBtnText}>Skra ferð</Text>
-        </TouchableOpacity>
-        <Text>Vaktin</Text>
-      </View>
-    )
-  }
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Vaktin</Text>
+  console.log("watch ", global.rides);
+  return(
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      {global.rides.map((ride) => {return renderRide(ride)})}
+      <TouchableOpacity
+          onPress={()=>{global.stackNav.navigate("Plan")}}
+          //style={styles.tripBtn}
+          >
+          <Text style={styles.tripBtnText}>Skra ferð</Text>
+      </TouchableOpacity>
     </View>
-  );
+  )
 }
+

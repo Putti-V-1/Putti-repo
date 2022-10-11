@@ -8,7 +8,7 @@ import {BookedScreen} from '../screens/BookedScreen';
 import CustomDrawer from'../screens/Drawer';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { ref, get, child } from 'firebase/database';
+import {SetGlobals} from './SetGlobals';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -23,15 +23,8 @@ function TabNav(){
     </Tab.Navigator>
   );
 }
-
 const HomeScreen = () => {
-  get(child(ref(global.db), `users/${global.user["uid"]}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-      global.user = snapshot.val();
-    }else{
-      stackNav.replace("login")
-    }
-  })
+  SetGlobals();
   return (
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({

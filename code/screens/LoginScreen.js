@@ -32,6 +32,7 @@ const LoginScreen = () => {
             set(ref(global.db, 'users/' + user.uid), {
                 email: loginEmail,
                 driver: false,
+                id: user.uid,
             });
             })
             .catch(error => alert(error.message))
