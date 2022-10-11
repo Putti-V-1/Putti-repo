@@ -5,20 +5,6 @@ import * as Location from 'expo-location';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
 
-const coordinates = [
-  {
-    latitude: 64.1391803422148,
-    longitude: -21.902778129778827,
-  },
-  {
-    latitude: 64.14167695211964, 
-    longitude: -21.907331756753607,
-  },
-  {
-    latitude: 64.13930669935749, 
-    longitude: -21.90936911953227,
-  }
-]
 const rides = [
   {
     id: 1,
@@ -44,23 +30,6 @@ const rides = [
   }
 ]
 
-const markerList = rides.map((ride) =>
-  <Marker 
-  key={ride.id}
-  coordinate={ride.destination}
-  onPress={() => {
-
-  }}
-  > 
-  <Callout onPress={() => {
-    alert('Ferð valin')
-  }}
-  >
-    <Text>Velja Ferð {ride.id}</Text>
-  </Callout>
-  </Marker>
-);
-
 const initialRegion = {
   latitude: 64.1391803422148,
   longitude: -21.902778129778827,
@@ -84,12 +53,12 @@ export function MapScreen() {
       strokeColor={active == ride.id ? "blue" : "grey"}
       tappable={true}
       onPress={() => {
+        setActive(ride.id)
       }}
       />
       <Marker 
       coordinate={ride.destination}
       onPress={() => {
-        console.log(ride.id)
         setActive(ride.id)
       }}
       > 
