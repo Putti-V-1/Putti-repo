@@ -44,6 +44,7 @@ const PlanScreen = () => {
         if(destination!=null && origin!=null){
             let rideId = global.user["id"] + selectedDate.getDate() + selectedDate.getMonth() + selectedDate.getFullYear() + selectedTime.getHours() + selectedTime.getMinutes();
             set(ref(global.db, 'rides/' + rideId), {
+                id: rideId,
                 driver: global.user["id"],
                 time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedTime.getHours() + ":" + selectedTime.getMinutes(),
                 destination: destination,
