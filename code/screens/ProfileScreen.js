@@ -35,11 +35,11 @@ export function ProfileScreen() {
         </View>
         <View style={styles.row}>
         <Icon name="globe" size={16} color="#23272A" />
-          <Text style={{color:"#777777", marginLeft: 17}}>islenska, enska, danska, spaenska</Text>
+          <Text style={{color:"#777777", marginLeft: 17}}>tungumal</Text>
         </View>
         <View style={styles.row}>
         <Icon name="age" size={19} color="#23272A" />
-          <Text style={{color:"#777777", marginLeft: 20}}>20 ara</Text>
+          <Text style={{color:"#777777", marginLeft: 20}}>aldur</Text>
         </View>
         <View style={styles.row}>
         <Icon name="phone" size={14} color="#23272A" />

@@ -12,13 +12,37 @@ import {SetGlobals} from './SetGlobals';
 import icons from './assets/logo.jpg';
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+import Icon from 'react-native-vector-icons/FontAwesome';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function TabNav(){
   return(
-    <Tab.Navigator initialRouteName="Map">
-      <Tab.Screen options={{headerShown: false}} name="Watch" component={WatchScreen} />
-      <Tab.Screen options={{headerShown: false}} name="Map" component={MapScreen} />
-      <Tab.Screen options={{headerShown: false}} name="Booked" component={BookedScreen} />
+    <Tab.Navigator
+        initialRouteName="Map"
+        screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+      }}
+       >
+      <Tab.Screen options={{
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="binoculars" color={color} size={size} />
+        ),
+      }}
+       name="Watch" component={WatchScreen} />
+      <Tab.Screen options={{
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="map" color={color} size={size} />
+        ),
+      }} 
+      name="Map" component={MapScreen} />
+      <Tab.Screen options={{
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="bookmark" color={color} size={size} />
+        ),
+        }} name="Booked" component={BookedScreen} />
     </Tab.Navigator>
   );
 }
@@ -28,8 +52,8 @@ const HomeScreen = () => {
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({
         headerRight: () => (
-          <Button
-            onPress={()=>{global.stackNav.navigate('Notifications')}}
+          <Button 
+          onPress={()=>{global.stackNav.navigate('Notifications')}}
             title="Notif"
             color="#fff"
           />
