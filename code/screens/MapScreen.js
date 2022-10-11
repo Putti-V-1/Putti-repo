@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import MapView, { Callout, Marker } from 'react-native-maps';
+import MapView, { Callout, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
@@ -152,6 +152,7 @@ export function MapScreen() {
         />
       <MapView 
         ref={mapRef}
+        provider={PROVIDER_GOOGLE}
         showsUserLocation={true}
         showsMyLocationButton={true}
         mapPadding={{top: 100, bottom: 50}}
