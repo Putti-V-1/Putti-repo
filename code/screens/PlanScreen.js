@@ -6,8 +6,9 @@ import { ref, set } from 'firebase/database';
 
 
 const PlanScreen = () => {
-    const [from, setFrom] = useState(null);
-    const [to, setTo] = useState(null);
+
+    const [origin, setOrigin] = useState(null);
+    const [destination, setDestination] = useState(null);
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     const [isTimePickerVisible, setTimePickerVisibility] = useState(false);
     const [selectedDate, setDate] = useState(new Date());
@@ -40,16 +41,16 @@ const PlanScreen = () => {
     };
     
     function confirmRide(){
-        if(to!=null && from!=null){
-            let rideId = global.user["id"] + selectedDate.getMonth() + selectedDate.getDate() + selectedDate.getFullYear();
+        if(destination!=null && origin!=null){
+            let rideId = global.user["id"] + selectedDate.getDate() + selectedDate.getMonth() + selectedDate.getFullYear() + selectedTime.getHours() + selectedTime.getMinutes();
             set(ref(global.db, 'rides/' + rideId), {
                 driver: global.user["id"],
                 time: selectedDate.getDate() + "-" + String(selectedDate.getMonth() + 1) + "-" + selectedDate.getFullYear() + " " + selectedTime.getHours() + ":" + selectedTime.getMinutes(),
-                to: to,
-                from: from,
+                destination: destination,
+                origin: origin,
             });
-            set(ref(global.db, 'users/' + global.user["id"] + "/rides"), {
-                rideId,
+            set(ref(global.db, 'users/' + global.user["id"] + "/rides/" + rideId), {
+                key: rideId,
             });
             global.stackNav.goBack();
             alert("ferð skrað")
@@ -72,11 +73,9 @@ const PlanScreen = () => {
                 onPress={(data, details = null) => {
                     // 'details' is provided when fetchDetails = true
                     //console.log(details.geometry.location.lat, data.description);
-                    setFrom({
+                    setOrigin({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
-                        latitudeDelta: 0.05,
-                        longitudeDelta: 0.05,
                     })
                 }}
                 query={{
@@ -86,7 +85,7 @@ const PlanScreen = () => {
                 }}
             />
             <GooglePlacesAutocomplete // Search bar með autocomplete
-                placeholder='to'
+                placeholder='To'
                 fetchDetails={true}
                 returnKeyType={"search"}
                 enablePoweredByContainer={false}
@@ -95,11 +94,9 @@ const PlanScreen = () => {
                 onPress={(data, details = null) => {
                     // 'details' is provided when fetchDetails = true
                     //console.log(details.geometry.location.lat, data.description);
-                    setTo({
+                    setDestination({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
-                        latitudeDelta: 0.05,
-                        longitudeDelta: 0.05,
                     })
                 }}
                 query={{
