@@ -16,7 +16,7 @@ export function ProfileScreen() {
         <View style={{flexDirection: 'row', marginTop: 15}}>
         <Image 
           source={logo}  
-          style={{width: 100, height: 100, borderRadius: 400/ 2}} 
+          style={{width: 100, height: 100, borderRadius: 400/ 2}} 
         />
           <View style={{marginLeft: 20}}>
             <Title style={[styles.title, {
@@ -38,7 +38,7 @@ export function ProfileScreen() {
           <Text style={{color:"#777777", marginLeft: 17}}>tungumal</Text>
         </View>
         <View style={styles.row}>
-        <Icon name="age" size={19} color="#23272A" />
+        <Icon name="user" size={19} color="#23272A" />
           <Text style={{color:"#777777", marginLeft: 20}}>aldur</Text>
         </View>
         <View style={styles.row}>
