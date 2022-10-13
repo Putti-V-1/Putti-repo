@@ -25,5 +25,16 @@ export function BookedScreen() {
         {global.allRides.map((ride) => {return renderRide(ride)}) /*breyti seinna*/}
       </View>
     </ScrollView>
+
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    },
+    row: {
+      flexDirection: 'row',
+      marginBottom: 10,
+    },
+});

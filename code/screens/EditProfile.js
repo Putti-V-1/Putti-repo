@@ -48,10 +48,10 @@ const EditProfile = () => {
         </View>
 
         <View style={styles.action}>
-          <Icon name="user-o" size={20}  color='#FFFFFF'/>
+          <Icon name="user-o" size={20}  color='#05375a'/>
           <TextInput
             placeholder="fornafn"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             autoCorrect={false}
             style={{
               flex: 1,
@@ -61,10 +61,10 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="user-o" size={20}  color='#FFFFFF'/>
+          <Icon name="user-o" size={20}  color='#05375a'/>
           <TextInput
             placeholder="eftirnafn"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             autoCorrect={false}
             style={{
               flex: 1,
@@ -74,10 +74,10 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="phone" size={20}  color='#FFFFFF'/>
+          <Icon name="phone" size={20}  color='#05375a'/>
           <TextInput
             placeholder="Simi"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             keyboardType='number-pad'
             autoCorrect={false}
             style={{
@@ -88,11 +88,11 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="envelope" size={20}  color='#FFFFFF'/>
+          <Icon name="envelope" size={20}  color='#05375a'/>
           <TextInput
             placeholder="Email"
             margin
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             autoCorrect={false}
             style={{
               flex: 1,
@@ -102,11 +102,11 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="question" size={20}  color='#FFFFFF'/>
+          <Icon name="question" size={20}  color='#05375a'/>
           <TextInput
             placeholder="aldur"
             margin
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             keyboardType='number-pad'
             autoCorrect={false}
             style={{
@@ -117,11 +117,11 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="globe" size={20}  color='#FFFFFF'/>
+          <Icon name="globe" size={20}  color='#05375a'/>
           <TextInput
             placeholder="tungumal"
             margin
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             autoCorrect={false}
             style={{
               flex: 1,
@@ -131,10 +131,10 @@ const EditProfile = () => {
             }}          />
         </View>
         <View style={styles.action}>
-          <Icon name="map-marker" size={20}  color='#FFFFFF'/>
+          <Icon name="map-marker" size={20}  color='#05375a'/>
           <TextInput
             placeholder="stadsettning"
-            placeholderTextColor="#FFFFFF"
+            placeholderTextColor="#05375a"
             autoCorrect={false}
             style={{
               flex: 1,
@@ -144,7 +144,8 @@ const EditProfile = () => {
             }}
           />
         </View>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={()=>{global.stackNav.navigate('ProfileScreen')}}>
+
           <Text style={styles.panelButtonTitle}>Vista!</Text>
         </TouchableOpacity>
       </View>
@@ -157,7 +158,7 @@ export default EditProfile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#99AAb5',
+    backgroundColor: '#FFFFFF',
     },
     commandButton: {
       padding: 15,

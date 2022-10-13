@@ -28,7 +28,7 @@ export default helpScreen;
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#99AAb5',
+      backgroundColor: '#FFFFFF',
       },
       row: {
         flexDirection: 'row',
