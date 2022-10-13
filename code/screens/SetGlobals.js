@@ -33,5 +33,5 @@ export function SetGlobals (){
         }else{
             stackNav.replace("login")
         }
-    }).then(setRides);    
+    }).then(setRides);
 }

@@ -4,7 +4,6 @@ import {styles} from "../Style"
 import { ref, get, child } from 'firebase/database';
 
 function renderRide(ride){
-  
   return (
     <TouchableOpacity style={{borderBottomWidth: "1px"}}>
       <Text>
@@ -23,9 +22,19 @@ export function WatchScreen() {
       {global.allRides.map((ride) => {return renderRide(ride)}) /*breyti seinna*/}
       <TouchableOpacity
           onPress={()=>{global.stackNav.navigate("Plan")}}
-          //style={styles.tripBtn}
+          style={{
+            borderRadius: 100,
+            width: 80,
+            height: 80,
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: "absolute",
+            right: 25,
+            bottom: 25,
+            backgroundColor: "#0782F9",
+          }}
           >
-          <Text style={styles.tripBtnText}>Skra ferð</Text>
+          <Text style={styles.tripBtnText}>+</Text>
       </TouchableOpacity>
     </View>
   )
