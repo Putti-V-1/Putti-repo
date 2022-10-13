@@ -4,18 +4,22 @@ import { ref, get, child } from 'firebase/database';
 
 function setRides(){
     get(child(ref(global.db), `users/${global.user["id"]}/rides`)).then((snapshot) => {
-        global.myRides = []
+        myRideIds = [];
         if (snapshot.exists()) {
             snapshot.forEach(function(item) {
-                global.myRides.push(item)
+                myRideIds.push(item);
             });
         }
     })
     get(child(ref(global.db), "rides")).then((snapshot) => {
-        global.allRides = []
+        global.myRides = [];
+        global.allRides = [];
         if (snapshot.exists()) {
             snapshot.forEach(function(item) {
-                global.allRides.push(item)
+                global.allRides.push(item);
+                if(myRideIds.includes(item.child("id"))){
+                    global.myRides.push(item);
+                }
             });
         }
     })
