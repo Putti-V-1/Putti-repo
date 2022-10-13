@@ -144,7 +144,7 @@ const EditProfile = () => {
             }}
           />
         </View>
-        <TouchableOpacity onPress={()=>{global.stackNav.navigate('ProfileScreen')}}>
+        <TouchableOpacity onPress={()=>{global.stackNav.navigate('Profile')}}>
 
           <Text style={styles.panelButtonTitle}>Vista!</Text>
         </TouchableOpacity>

@@ -3,7 +3,7 @@ import { Text, View, StyleSheet} from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const helpScreen = () => {
+const HelpScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={{
@@ -23,7 +23,7 @@ const helpScreen = () => {
     </View>
   );
 }
-export default helpScreen;
+export default HelpScreen;
 
 const styles = StyleSheet.create({
     container: {

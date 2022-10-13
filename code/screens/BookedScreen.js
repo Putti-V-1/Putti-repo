@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 
 function renderRide(ride){
   return (
-    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}}>
+    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}} key={ride.id}>
       <Text>
         From: {ride.child("origin").child("address").val()}
       </Text>

@@ -10,7 +10,7 @@ import RequestRideScreen from './screens/RequestRideScreen';
 import ProfileScreen from './screens/ProfileScreen'
 import EditProfile from './screens/EditProfile'
 import FavoriteScreen from './screens/FavoriteScreen';
-import helpScreen from './screens/HelpScreen';
+import HelpScreen from './screens/HelpScreen';
 import PaymentScreen from './screens/PaymentScreen';
 
 
@@ -29,8 +29,9 @@ export default function App() {
         <Stack.Screen name="RequestRide" component={RequestRideScreen} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
         <Stack.Screen name="FavoriteScreen" component={FavoriteScreen} />
-        <Stack.Screen name="helpScreen" component={helpScreen} />
+        <Stack.Screen name="helpScreen" component={HelpScreen} />
         <Stack.Screen name="PaymentScreen" component={PaymentScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   )
