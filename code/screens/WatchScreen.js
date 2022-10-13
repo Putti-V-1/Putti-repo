@@ -4,10 +4,14 @@ import {styles} from "../Style"
 import { ref, get, child } from 'firebase/database';
 
 function renderRide(ride){
+  console.log("myrides: ", global.myRides)
   return (
-    <TouchableOpacity style={{borderBottomWidth: "1px"}}>
+    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}}>
       <Text>
-        Driver: {ride.child("driver").val()}
+        From: {ride.child("origin").child("address").val()}
+      </Text>
+      <Text>
+        To: {ride.child("destination").child("address").val()}
       </Text>
       <Text>
         Time: {ride.child("time").val()}
@@ -18,25 +22,27 @@ function renderRide(ride){
 
 export function WatchScreen() {
   return(
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      {global.allRides.map((ride) => {return renderRide(ride)}) /*breyti seinna*/}
-      <TouchableOpacity
-          onPress={()=>{global.stackNav.navigate("Plan")}}
-          style={{
-            borderRadius: 100,
-            width: 80,
-            height: 80,
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: "absolute",
-            right: 25,
-            bottom: 25,
-            backgroundColor: "#0782F9",
-          }}
-          >
-          <Text style={styles.tripBtnText}>+</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView contentContainerStyle={{flex: 1}}>
+      <View style={{flex: 1, alignItems: "center"}}>
+        {global.allRides.map((ride) => {return renderRide(ride)}) /*breyti seinna*/}
+        <TouchableOpacity
+            onPress={()=>{global.stackNav.navigate("Plan")}}
+            style={{
+              borderRadius: 100,
+              width: 80,
+              height: 80,
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: "absolute",
+              right: 25,
+              bottom: 25,
+              backgroundColor: "#0782F9",
+            }}
+            >
+            <Text style={styles.tripBtnText}>+</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   )
 }
 
