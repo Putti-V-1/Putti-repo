@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         height: "110%",
         paddingTop: "2%",
         top: "195%",
-        backgroundColor: "lightgray",
+        backgroundColor: "darkgreen",
     },
     drawer: {
         flex: 1,
@@ -28,7 +28,21 @@ const styles = StyleSheet.create({
     logout: {
         position: "relative",
         alignSelf: "flex-end",
-    }
+    },
+    tripBtn: {
+        backgroundColor: "white",
+        width: "50%",
+        padding: 15,
+        borderRadius: 10,
+        borderColor: "black",
+        borderWidth: "1px",
+        alignItems: "center",
+        marginBottom: "10%",
+    },
+    tripBtnText: {
+        color: "black",
+        fontSize: 50,
+    },
 });
 
 export { styles }
