@@ -8,7 +8,6 @@ import {BookedScreen} from '../screens/BookedScreen';
 import CustomDrawer from'../screens/Drawer';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {SetGlobals} from './SetGlobals';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -24,7 +23,12 @@ function TabNav(){
   );
 }
 const HomeScreen = () => {
-  SetGlobals();
+  if(global.allRides){ // debug code
+    console.log("jajajaj");
+  }else{
+    console.log("nananana");
+    console.log(global.allRides);
+  }
   return (
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({

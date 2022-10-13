@@ -77,6 +77,7 @@ const PlanScreen = () => {
                     setOrigin({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
+                        address: data.description,
                     })
                 }}
                 query={{
@@ -98,6 +99,7 @@ const PlanScreen = () => {
                     setDestination({
                         latitude: details.geometry.location.lat,
                         longitude: details.geometry.location.lng,
+                        address: data.description,
                     })
                 }}
                 query={{
