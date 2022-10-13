@@ -1,0 +1,109 @@
+{
+  "rides": {
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi113920221218": {
+      "destination": {
+        "address": "Djúpivogur, Iceland",
+        "latitude": 64.656888,
+        "longitude": -14.2900509
+      },
+      "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi113920221218",
+      "origin": {
+        "address": "Laugavegur, Reykjavík, Iceland",
+        "latitude": 64.143036,
+        "longitude": -21.9124046
+      },
+      "time": "13-10-2022 12:18"
+    },
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022940": {
+      "destination": {
+        "address": "Mývatn, Iceland",
+        "latitude": 65.60386,
+        "longitude": -16.9961055
+      },
+      "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022940",
+      "origin": {
+        "address": "Vestrahorn, Iceland",
+        "latitude": 64.27333329999999,
+        "longitude": -15.0086111
+      },
+      "time": "13-10-2022 9:40"
+    },
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022941": {
+      "destination": {
+        "address": "Selfoss, Iceland",
+        "latitude": 63.9334611,
+        "longitude": -21.0013833
+      },
+      "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022941",
+      "origin": {
+        "address": "Orkan, Sunnumörk, Hveragerði, Iceland",
+        "latitude": 63.9953972,
+        "longitude": -21.1918388
+      },
+      "time": "13-10-2022 9:41"
+    },
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi1139202296": {
+      "destination": {
+        "address": "Reykjavík Airport, Reykjavík, Iceland",
+        "latitude": 64.1317852,
+        "longitude": -21.9466164
+      },
+      "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1139202296",
+      "origin": {
+        "address": "Kringlan, Reykjavík, Iceland",
+        "latitude": 64.13021549999999,
+        "longitude": -21.8964631
+      },
+      "time": "13-10-2022 9:6"
+    },
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi11492022918": {
+      "destination": {
+        "address": "Black Sand Beach Vik, Vik, Iceland",
+        "latitude": 63.4142559,
+        "longitude": -19.0104132
+      },
+      "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11492022918",
+      "origin": {
+        "address": "Sky Lagoon, Vesturvör, Kópavogur, Iceland",
+        "latitude": 64.1164891,
+        "longitude": -21.9462908
+      },
+      "time": "14-10-2022 9:18"
+    }
+  },
+  "users": {
+    "bEWzitqWgVbsaH0AUkT9eLBr6Mi1": {
+      "driver": false,
+      "email": "a@a.com",
+      "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+      "rides": {
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221128": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221128"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221137": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221137"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi113920221218": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi113920221218"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022940": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022940"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022941": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11392022941"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi1139202296": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1139202296"
+        },
+        "bEWzitqWgVbsaH0AUkT9eLBr6Mi11492022918": {
+          "key": "bEWzitqWgVbsaH0AUkT9eLBr6Mi11492022918"
+        }
+      }
+    }
+  }
+}
