@@ -2,14 +2,10 @@
   "name": "putti-v1",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
-  "homepage": "https://putti-v-1.github.io",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "predeploy": "expo run build",
-    "deploy": "gh-pages -d build"
+    "ios": "expo start --ios"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.17.0",
