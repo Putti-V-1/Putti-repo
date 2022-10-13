@@ -47,7 +47,12 @@ function TabNav(){
   );
 }
 const HomeScreen = () => {
-  SetGlobals();
+  if(global.allRides){ // debug code
+    console.log("jajajaj");
+  }else{
+    console.log("nananana");
+    console.log(global.allRides);
+  }
   return (
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({

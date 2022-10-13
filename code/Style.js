@@ -40,9 +40,8 @@ const styles = StyleSheet.create({
         marginBottom: "10%",
     },
     tripBtnText: {
-        color: "#0782F9",
-        fontWeight: "700",
-        fontSize: 16,
+        color: "black",
+        fontSize: 50,
     },
 });
 

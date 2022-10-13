@@ -4,6 +4,7 @@ import { KeyboardAvoidingView, StyleSheet, Text, View, TouchableOpacity } from "
 import { TextInput } from "react-native-gesture-handler";
 import {auth} from "../firebase"
 import { ref, set } from 'firebase/database';
+import {SetGlobals} from './SetGlobals';
 
 
 const LoginScreen = () => {
@@ -17,7 +18,8 @@ const LoginScreen = () => {
           if (user) {
             global.user = user;
             global.stackNav = navigation;
-            navigation.replace("Home");
+            SetGlobals();
+            global.stackNav.replace("Home")
           }
         })
     

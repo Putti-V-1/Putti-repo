@@ -1,0 +1,28 @@
+[
+  {
+    "destination": {
+      "latitude": 64.14167695211964,
+      "longitude": -21.907331756753607
+    },
+    "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+    "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221128",
+    "origin": {
+      "latitude": 64.1391803422148,
+      "longitude": -21.902778129778827
+    },
+    "time": "11-10-2022 11:28"
+  },
+  {
+    "destination": {
+      "latitude": 64.1391803422148,
+      "longitude": -21.902778129778827
+    },
+    "driver": "bEWzitqWgVbsaH0AUkT9eLBr6Mi1",
+    "id": "bEWzitqWgVbsaH0AUkT9eLBr6Mi111920221137",
+    "origin": {
+      "latitude": 64.13930669935749,
+      "longitude": -21.90936911953227
+    },
+    "time": "11-10-2022 11:37"
+  }
+]
