@@ -4,9 +4,8 @@ import {styles} from "../Style"
 import { ref, get, child } from 'firebase/database';
 
 function renderRide(ride){
-  console.log("myrides: ", global.myRides)
   return (
-    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}}>
+    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}} key={ride.child("id").val()}>
       <Text>
         From: {ride.child("origin").child("address").val()}
       </Text>

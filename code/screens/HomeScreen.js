@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View, Text, StyleSheet} from "react-native";
+import { Button, View, TouchableOpacity, StyleSheet} from "react-native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import {MapScreen} from '../screens/MapScreen';
@@ -8,12 +8,11 @@ import {BookedScreen} from '../screens/BookedScreen';
 import CustomDrawer from'../screens/Drawer';
 import {ProfileScreen} from '../screens/ProfileScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import {SetGlobals} from './SetGlobals';
-import icons from './assets/logo.jpg';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-import Icon from 'react-native-vector-icons/FontAwesome';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function TabNav(){
   return(
@@ -47,22 +46,20 @@ function TabNav(){
   );
 }
 const HomeScreen = () => {
-  if(global.allRides){ // debug code
-    console.log("jajajaj");
-  }else{
-    console.log("nananana");
-    console.log(global.allRides);
-  }
   return (
     <NavigationContainer independent={true} drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={() => ({
         headerRight: () => (
-          <Button 
-          onPress={()=>{global.stackNav.navigate('Notifications')}}
-            title="Notif"
-            color="#fff"
-          />
+          <View style={{flexDirection: "row",justifyContent: "flex-end",paddingRight:10,width: 120}}>
+          <TouchableOpacity
+            onPress={()=>{global.stackNav.navigate('Notifications')}}
+            >
+            <Icon type="font-awesome" name="bell" color="white" size={17}/>
+          </TouchableOpacity>
+        </View>
+          
         ),
+        // onPress={()=>{global.stackNav.navigate('Notifications')}}
         headerStyle: {
           backgroundColor: 'gray',
         },
