@@ -71,6 +71,7 @@ Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/LoginScreen.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.50.58.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.11.png)
+***
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.16.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.21.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.25.png)
