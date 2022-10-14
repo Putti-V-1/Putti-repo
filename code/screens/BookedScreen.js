@@ -3,7 +3,7 @@ import { Text, View, ScrollView, TouchableOpacity, StyleSheet } from 'react-nati
 
 function renderRide(ride){
   return (
-    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}} key={ride.id}>
+    <TouchableOpacity style={{borderWidth: "1px", marginTop: 12, borderRadius: 10, width: "85%", padding: 5}} key={ride.child("id").val()}>
       <Text>
         From: {ride.child("origin").child("address").val()}
       </Text>
@@ -18,7 +18,6 @@ function renderRide(ride){
 }
 
 export function BookedScreen() {
-  console.log(global.bookedRides)
   return (
     <ScrollView contentContainerStyle={{flex: 1}}>
       <View style={{flex: 1, alignItems: "center"}}>

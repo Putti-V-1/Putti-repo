@@ -58,7 +58,6 @@ export function MapScreen() {
               latitudeDelta: 0.05,
               longitudeDelta: 0.05,
             })
-            console.log("region: ",region);
           }}
           query={{
             key: 'AIzaSyAR-R6U3YWpLsuqcAV85z-H-X6mBBdIFnQ',
@@ -98,7 +97,7 @@ export function MapScreen() {
               global.stackNav.navigate('RequestRide',{ride: ride})
             }}
             >
-              <Text>Velja Ferð {ride.id}</Text>
+              <Text>Velja Ferð</Text>
             </Callout>
             </Marker>
           </Fragment>
