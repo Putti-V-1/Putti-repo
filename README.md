@@ -22,8 +22,6 @@ Notandi getur leitað að ferð til ákveðin staðs á ákveðnum tíma og sér
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/RequestRide.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/Notifications.png)
 
-
-
 ## Vaktin
 
 Notandi getur einnig sett "vakt" á ferð á ákveðnum tíma, þeas hann getur skráð hvert hann vill fara í á einhverjum ákveðnum degi klukkan eitthvað (hægt er að velja hvenær sem er á ákveðnum degi) og fær svo tilkynningar þegar bílstjórar skrá ferðir sem gætu hentað i þessa ferð og getur þá sent fyrirspurn á bílstjóra.
@@ -43,7 +41,6 @@ Notandi getur séð prófílinn sinn, breytt upplýsingum og mynd, ásamt því 
 
 ***
 
-
 ## Bílstjóri
 
 Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í bílstjóra ef hann á nú þegar farðegaaðgang. Svo sem bílstjóri getur hann gert allt það sama og farþegi en getur líka skráð leiðir sem hann ætlar að keyra. Bílstjóri fær svo tilkynningu þegar farþegi sendir fyrirspurn um far. Í fyrirspurninni sér bílstjóri hvar farþegi vill láta sækja sig, sirka hversu mikinn tíma það bætir við ferðinna að sækja farþega, og hversu mikinn perning hann fær fyrir það. Þá ýtir bílstjóri annað hvort á já eða nei. 
@@ -62,7 +59,7 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 ---
 ### Stafli
 Fyrir þetta verkefni notuðum við [react-native](https://reactnative.dev/) í gegnum [expo](https://expo.dev/) og notuðum "real time database" hjá [firebase](https://firebase.google.com/) sem gagnagrunn.  
-Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-maps/react-native-maps) og [react-native-maps-directions](https://github.com/bramus/react-native-maps-directions) library sem byggja á google places api og directions api í gegnum google cloud.
+Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-maps/react-native-maps) og [react-native-maps-directions](https://github.com/bramus/react-native-maps-directions) library sem byggja á google places api og directions api í gegnum google cloud. [react-navigation](https://github.com/react-navigation) var notað fyrir routing í appinu.
 
 ### Skjámyndir og upptökur
 
@@ -75,13 +72,21 @@ Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.16.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.21.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.25.png)
+
 ### Gagnagrunnur
 
-Gagnagrunnurinn okkar var settur upp með Firebase realtime database
+Gagnagrunnurinn okkar var settur upp með Firebase realtime database og skiptur upp í users og rides.
 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.44.08.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.45.27.png)
 
 ### Vinnuflæði
 [Github projects vinnuflæði](https://github.com/orgs/Putti-V-1/projects/3)
+## Network
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2009.39.39.png)
+***
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2009.40.30.png)
+***
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2009.41.08.png)
 ### Samantekt
+Appið okkar er enþá í frumstigi þar sem allar grunneiningar appsins eru settar upp en raunveruleg virki er ekki til staðar. Miklir örðuleikar með gagnagrunn library og expo leiddi til þess að hýsing með expo virkaði ekki. Til að fá virki þyrfti helst að skipta um gagnagrunn, setja upp notifications og request ride.
