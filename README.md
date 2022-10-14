@@ -1,6 +1,5 @@
 # Putti - samgöngulausn í vasanum  
 Eftir Anton, Kötlu, Pál, og Viktor | VEFÞ3VÞ05DU
-
 ---
 
 Putti er samgönguapp sem nýtur sér lausu sætin í bílum einstaklinga sem vilja lækka bensíneyðsluna sína og eintstaklinga sem vilja fleiri samgönguvalmöguleika. Appið sér um vandamál eins og greiðslumáta með því að hafa grunnverð á lítra og lætur farþega borga með aur. Appið er tilvalið fyrir þá sem þurfa að koma sér á stað sem hefur ekkert endilega strætó sem fer alla leið þangað, en hefur marga sem eiga sér leið þangað sem eru ein í bíl.
@@ -60,7 +59,6 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Wireframe/ActiveRideInfo.png)
 
 ***
-
 ---
 ### Stafli
 Fyrir þetta verkefni notuðum við [react-native](https://reactnative.dev/) í gegnum [expo](https://expo.dev/) og notuðum "real time database" hjá [firebase](https://firebase.google.com/) sem gagnagrunn.  
@@ -69,10 +67,19 @@ Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-
 ### Skjámyndir og upptökur
 
 [youtube video](https://youtu.be/Kz5b0wH6g0M)
-
+***
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/LoginScreen.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.50.58.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.11.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.16.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.21.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(3rd%20generation)%20-%202022-10-14%20at%2008.51.25.png)
 ### Gagnagrunnur
 
 Gagnagrunnurinn okkar var settur upp með Firebase realtime database
+
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.44.08.png)
+![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.45.27.png)
 
 ### Vinnuflæði
 [Github projects vinnuflæði](https://github.com/orgs/Putti-V-1/projects/3)
