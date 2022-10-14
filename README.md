@@ -66,6 +66,10 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 Fyrir þetta verkefni notuðum við [react-native](https://reactnative.dev/) í gegnum [expo](https://expo.dev/) og notuðum "real time database" hjá [firebase](https://firebase.google.com/) sem gagnagrunn.  
 Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-maps/react-native-maps) og [react-native-maps-directions](https://github.com/bramus/react-native-maps-directions) library sem byggja á google places api og directions api í gegnum google cloud.
 
+### Skjámyndir og upptökur
+
+[youtube video](https://youtu.be/Kz5b0wH6g0M)
+
 ### Gagnagrunnur
 
 Gagnagrunnurinn okkar var settur upp með Firebase realtime database
