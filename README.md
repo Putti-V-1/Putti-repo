@@ -59,7 +59,7 @@ Bílstjóri downloadar appi og skráir sig sem bílstjóra eða breytir sér í 
 ---
 ### Stafli
 Fyrir þetta verkefni notuðum við [react-native](https://reactnative.dev/) í gegnum [expo](https://expo.dev/) og notuðum "real time database" hjá [firebase](https://firebase.google.com/) sem gagnagrunn.  
-Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-maps/react-native-maps) og [react-native-maps-directions](https://github.com/bramus/react-native-maps-directions) library sem byggja á google places api og directions api í gegnum google cloud. [react-navigation](https://github.com/react-navigation) var notað fyrir routing í appinu.
+Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-maps/react-native-maps) og [react-native-maps-directions](https://github.com/bramus/react-native-maps-directions) library sem byggja á google places api og directions api í gegnum google cloud.[react-native-google-places-autocomplete](https://github.com/FaridSafi/react-native-google-places-autocomplete) var notað fyrir searchbar með autocomplete sem skilar frá sér hnitum líka [react-navigation](https://github.com/react-navigation) var notað fyrir routing í appinu.
 
 ### Skjámyndir og upptökur
 
@@ -75,7 +75,7 @@ Fyrir kortið notuðum við [react-native-maps](https://github.com/react-native-
 
 ### Gagnagrunnur
 
-Gagnagrunnurinn okkar var settur upp með Firebase realtime database og skiptur upp í users og rides.
+Gagnagrunnurinn okkar var settur upp með Firebase realtime database og skiptur upp í users og rides. Rides inniheldur upplýsingar um byrjunarstað og lokastað ásamt tíma og id. User er með email, hvort hann sé bístjóri og ferðirnar hans.
 
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.44.08.png)
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2008.45.27.png)
@@ -89,4 +89,4 @@ Gagnagrunnurinn okkar var settur upp með Firebase realtime database og skiptur 
 ***
 ![](https://github.com/Putti-V-1/Putti-repo/blob/main/Screenshots/Screenshot%202022-10-14%20at%2009.41.08.png)
 ### Samantekt
-Appið okkar er enþá í frumstigi þar sem allar grunneiningar appsins eru settar upp en raunveruleg virki er ekki til staðar. Miklir örðuleikar með gagnagrunn library og expo leiddi til þess að hýsing með expo virkaði ekki. Til að fá virki þyrfti helst að skipta um gagnagrunn, setja upp notifications og request ride.
+Appið okkar er enþá í frumstigi þar sem allar grunneiningar appsins eru settar upp en raunveruleg virki er ekki til staðar. Miklir örðuleikar með gagnagrunn library og expo leiddi til þess að hýsing með expo virkaði ekki. Til að fá virki þyrfti helst að skipta um gagnagrunn, setja upp notifications og request ride, tengja profile við gagnagrunninn, og margt meira. Til að hýsa appið þyrfti helst að fara alla leið og nota expo EAS til að fá appið í play store/IOS app store.
